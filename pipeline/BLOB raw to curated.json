@@ -13,7 +13,16 @@
 					"secureOutput": true,
 					"secureInput": true
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "raw//SalesLT.Product.txt"
+					},
+					{
+						"name": "Destination",
+						"value": "curated//"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
