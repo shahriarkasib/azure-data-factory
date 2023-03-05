@@ -53,45 +53,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Delete Ra",
-				"type": "Delete",
-				"dependsOn": [
-					{
-						"activity": "Copy SQL Table",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "DelimitedText2",
-						"type": "DatasetReference"
-					},
-					"logStorageSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "479f3c90-d2b5-4251-8af8-182a41aa320d"
-					},
-					"enableLogging": true,
-					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					}
-				}
 			}
 		],
 		"annotations": []
