@@ -1,0 +1,41 @@
+{
+	"name": "Run Pipelines",
+	"properties": {
+		"activities": [
+			{
+				"name": "SQL to Blob",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "SQL to BLOB",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "BLOB raw to curated",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "SQL to Blob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "BLOB raw to curated",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
+				}
+			}
+		],
+		"annotations": []
+	}
+}
