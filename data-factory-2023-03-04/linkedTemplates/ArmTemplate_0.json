@@ -249,7 +249,16 @@
 							"secureOutput": true,
 							"secureInput": true
 						},
-						"userProperties": [],
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "raw//SalesLT.Product.txt"
+							},
+							{
+								"name": "Destination",
+								"value": "curated//"
+							}
+						],
 						"typeProperties": {
 							"source": {
 								"type": "DelimitedTextSource",
@@ -410,6 +419,20 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Notebook1",
+						"type": "DatabricksNotebook",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {}
 					}
 				],
 				"policy": {
